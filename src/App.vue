@@ -1,5 +1,5 @@
 <script>
-// import MyComp from './components/MyComp.vue';
+import CharacterCard from "./components/CharacterCard.vue";
 // import {store} from './store/index.js'
 import axios from "axios";
 
@@ -22,7 +22,7 @@ export default {
     },
   },
 
-  components: {},
+  components: { CharacterCard },
 
   created() {
     this.fetchCharacters();
@@ -34,22 +34,7 @@ export default {
   <div class="container">
     <h1 class="my-5">Play</h1>
     <div class="row row-cols-4 g-3">
-      <div v-for="character in characters" class="col">
-        <div class="card">
-          <img :src="character.type.image" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">{{ character.name }}</h5>
-            <ul class="list-group">
-              <li class="list-group-item">Forza {{ character.strength }}</li>
-              <li class="list-group-item">Difesa {{ character.defence }}</li>
-              <li class="list-group-item">Velocità {{ character.speed }}</li>
-              <li class="list-group-item">Vita {{ character.life }}</li>
-              <li class="list-group-item">Intelligenza {{ character.intelligence }}</li>
-            </ul>
-            <a href="#" class="btn btn-primary">Scegli me!</a>
-          </div>
-        </div>
-      </div>
+      <character-card v-for="character in characters" :character="character" class="col" />
     </div>
   </div>
 </template>
