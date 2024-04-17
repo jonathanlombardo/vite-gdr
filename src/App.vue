@@ -18,7 +18,6 @@ export default {
 
 <template>
   <div class="container">
-    <h1 class="my-5">Play</h1>
     <router-view />
   </div>
 </template>

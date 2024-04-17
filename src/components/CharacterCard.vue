@@ -39,7 +39,7 @@ export default {
           <li class="list-group-item">Vita {{ character.life }}</li>
           <li class="list-group-item">Intelligenza {{ character.intelligence }}</li>
         </ul>
-        <a href="#" class="btn btn-primary">Scegli me!</a>
+        <router-link v-if="$route.name == 'characters.index'" :to="{ name: 'characters.show', params: { id: character.id } }" class="btn btn-primary">Scegli me!</router-link>
       </div>
     </div>
   </div>

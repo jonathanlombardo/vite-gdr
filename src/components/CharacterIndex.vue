@@ -1,6 +1,4 @@
 <script>
-// import {store} from './store/index.js'
-// import MyComp from './components/MyComp.vue';
 import CharacterCard from "./CharacterCard.vue";
 import axios from "axios";
 
@@ -32,8 +30,9 @@ export default {
 </script>
 
 <template>
+  <h1 class="my-5">Scegli il personaggio</h1>
   <div class="row row-cols-4 g-3">
-    <character-card v-for="character in characters" :character="character" class="col" />
+    <character-card v-for="character in characters" :character="character" />
   </div>
 </template>
 
