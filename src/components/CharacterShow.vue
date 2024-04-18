@@ -52,7 +52,7 @@ export default {
     <!-- <h1 class="text-center my-5">Combatti!</h1> -->
     <div class="title-wrapper text-center my-5">
       <div class="h1">
-        <div :class="['fs-1', 'btn', 'btn-primary', { 'd-none': counter == fight.length }]" @click="handleFightClick()">Combatti</div>
+        <div :class="['fs-1', 'btn', 'btn-light', 'px-5', { 'd-none': counter == fight.length }]" @click="handleFightClick()">Combatti!</div>
       </div>
       <div id="result" :class="['h1', { 'd-none': counter < fight.length }]">{{ winner == userCharacter.name ? "Hai winto" : winner == cpuCharacter.name ? "Hai werso" : "WAREGGIO" }}</div>
     </div>

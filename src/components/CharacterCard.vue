@@ -136,8 +136,8 @@ export default {
 
 @keyframes lamp {
   from {
-    background-color: gray;
-    color: gray;
+    background-color: #212529;
+    color: #212529;
   }
   to {
     background-color: white;
