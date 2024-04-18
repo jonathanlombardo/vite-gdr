@@ -54,7 +54,7 @@ export default {
       <div class="h1">
         <div :class="['fs-1', 'btn', 'btn-primary', { 'd-none': counter == fight.length }]" @click="handleFightClick()">Combatti</div>
       </div>
-      <div :class="['h1', { 'd-none': counter < fight.length }]">{{ winner == userCharacter.name ? "Hai winto" : winner == cpuCharacter.name ? "Hai werso" : "WAREGGIO" }}</div>
+      <div id="result" :class="['h1', { 'd-none': counter < fight.length }]">{{ winner == userCharacter.name ? "Hai winto" : winner == cpuCharacter.name ? "Hai werso" : "WAREGGIO" }}</div>
     </div>
     <div class="row row-cols-2 g-5">
       <div class="col">
@@ -72,5 +72,24 @@ export default {
 <style lang="scss" scoped>
 .title-wrapper {
   min-height: 75px;
+}
+
+#result {
+  opacity: 0;
+  animation-name: appear;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
