@@ -31,7 +31,7 @@ export default {
 
 <template>
   <h1 class="my-5">Scegli il personaggio</h1>
-  <div class="row row-cols-4 g-3">
+  <div class="row row-cols-4 g-5">
     <character-card v-for="character in characters" :character="character" />
   </div>
 </template>

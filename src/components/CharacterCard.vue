@@ -5,7 +5,7 @@
 export default {
   data() {
     return {
-      // store,
+      linkDisabled: 'style="pointer-events: none"',
       // ...
     };
   },
@@ -29,7 +29,9 @@ export default {
 <template>
   <div class="col">
     <div class="card">
-      <img :src="character.type.imgUrl" class="card-img-top" alt="..." />
+      <router-link :to="{ name: 'characters.show', params: { id: character.id } }" :class="$route.name == 'characters.index' ? '' : 'routerLinkDisabled'">
+        <img :src="character.type.imgUrl" class="card-img-top" alt="..." />
+      </router-link>
       <div class="card-body">
         <h5 class="card-title">{{ character.name }}</h5>
         <ul class="list-group">
@@ -39,10 +41,30 @@ export default {
           <li class="list-group-item">Vita {{ character.life }}</li>
           <li class="list-group-item">Intelligenza {{ character.intelligence }}</li>
         </ul>
-        <router-link v-if="$route.name == 'characters.index'" :to="{ name: 'characters.show', params: { id: character.id } }" class="btn btn-primary">Scegli me!</router-link>
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  text-align: center;
+  border: none;
+  .routerLinkDisabled {
+    pointer-events: none;
+  }
+  // v-if="$route.name == 'characters.index'"
+  img {
+    max-width: 310px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: bottom;
+    margin-bottom: 10px;
+  }
+  .list-group-item {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+}
+</style>
