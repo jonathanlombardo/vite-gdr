@@ -47,24 +47,41 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.card {
-  text-align: center;
-  border: none;
-  .routerLinkDisabled {
-    pointer-events: none;
+.col {
+  position: relative;
+  left: 100vw;
+  animation-name: entryRight;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+
+  .card {
+    text-align: center;
+    border: none;
+    .routerLinkDisabled {
+      pointer-events: none;
+    }
+    // v-if="$route.name == 'characters.index'"
+    img {
+      max-width: 310px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: bottom;
+      margin-bottom: 10px;
+    }
+    .list-group-item {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
   }
-  // v-if="$route.name == 'characters.index'"
-  img {
-    max-width: 310px;
-    aspect-ratio: 1;
-    object-fit: cover;
-    object-position: bottom;
-    margin-bottom: 10px;
+}
+
+@keyframes entryRight {
+  from {
+    left: 100vw;
   }
-  .list-group-item {
-    border-top: none;
-    border-left: none;
-    border-right: none;
+  to {
+    left: 0;
   }
 }
 </style>

@@ -24,4 +24,8 @@ export default {
 
 <style lang="scss">
 @use "./general.scss";
+
+#app {
+  overflow-x: hidden;
+}
 </style>

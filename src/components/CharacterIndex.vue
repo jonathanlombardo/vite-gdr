@@ -1,6 +1,7 @@
 <script>
 import CharacterCard from "./CharacterCard.vue";
 import axios from "axios";
+import { writingDelay } from "../utility.js";
 
 export default {
   data() {
@@ -26,11 +27,16 @@ export default {
   created() {
     this.fetchCharacters();
   },
+
+  mounted() {
+    const title = document.getElementById("main-title");
+    writingDelay("Scegli il personaggio", title, 50);
+  },
 };
 </script>
 
 <template>
-  <h1 class="my-5">Scegli il personaggio</h1>
+  <h1 id="main-title" class="my-5 text-center"></h1>
   <div class="row row-cols-4 g-5">
     <character-card v-for="character in characters" :character="character" />
   </div>
