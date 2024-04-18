@@ -29,7 +29,7 @@ export default {
 <template>
   <div class="col">
     <div class="card">
-      <img :src="character.type.image" class="card-img-top" alt="..." />
+      <img :src="character.type.imgUrl" class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title">{{ character.name }}</h5>
         <ul class="list-group">
