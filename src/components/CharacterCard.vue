@@ -55,7 +55,7 @@ export default {
 
 <template>
   <div class="col">
-    <div class="card">
+    <div class="card" :style="fight ? 'border: none' : ''">
       <router-link :to="{ name: 'characters.show', params: { id: character.id } }" :class="$route.name == 'characters.index' ? '' : 'routerLinkDisabled'">
         <img :src="character.type.imgUrl" class="card-img-top" alt="..." />
       </router-link>
@@ -85,6 +85,9 @@ export default {
   .card {
     text-align: center;
     border: none;
+    &:hover {
+      border: 1px solid white;
+    }
     .routerLinkDisabled {
       pointer-events: none;
     }
